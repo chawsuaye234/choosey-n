@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose the number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <style>
+        .slider {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: black 0px 0px 10px;
+        }
+
+        .photos {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Smooth transition added */
+        }
+
+        .photo {
+            width: 300px;
+            height: 200px;
+            flex-shrink: 0;
+        }
+
+        .controls {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .button {
+            background-color: white;
+            color: black;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+        }
+
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .button:hover {
+            transform: scale(1.3);
+            transition: 2.ms;
+        }
+    </style>
+<body>
+    <div class="container">
+
+        <div class="slider">
+            <div class="photos">
+                <img src="ph1.jpg" alt="Photo 1" class="photo">
+                <img src="ph2.jpg" alt="Photo 2" class="photo">
+                <img src="ph3.jpg" alt="Photo 3" class="photo">
+                <img src="ph4.jpg" alt="Photo 4" class="photo">
+                <img src="ph5.jpg" alt="Photo 5" class="photo">
+                <img src="ph6.jpg" alt="Photo 6" class="photo">
+            </div>
+        </div>
+        <div class="controls">
+            <button id="next" class="button">Next</button>
+        </div>
+        <script>
+            const photos = document.querySelector('.photos');
+            const nextButton = document.getElementById('next');
+            let currentPhoto = 0;
+    
+            nextButton.addEventListener('click', () => {
+                currentPhoto++;
+                if (currentPhoto === 6) currentPhoto = 0; // Loops back to the first photo
+                photos.style.transform = `translateX(-${currentPhoto * 300}px)`;
+            });
+        </script>
+        
+        <h1>Choose the number..💗👉👈hee...😽</h1>
+
+        <div class="btn">
+            <a href="1.html">1</a>
+            <a href="2.html">2</a>
+        </div>
+    </div>
+</body>
+</html>
